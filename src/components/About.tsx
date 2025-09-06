@@ -59,8 +59,12 @@ export default function About() {
           {/* Profile Card */}
           <div className="bg-gradient-to-br from-pachuca-blue to-blue-600 rounded-2xl p-8 text-white">
             <div className="text-center mb-8">
-              <div className="w-32 h-32 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-4xl font-bold">A</span>
+              <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white/20">
+                <img 
+                  src="/images/90.webp" 
+                  alt="Ambar Pachuca"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-2xl font-bold mb-2">Ambar</h3>
               <p className="text-blue-100">Mediocampista Ofensiva</p>

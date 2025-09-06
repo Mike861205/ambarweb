@@ -6,9 +6,9 @@ export default function Hero() {
   const [currentImage, setCurrentImage] = useState(0)
   
   const heroImages = [
-    '/images/ambar-action1.jpg',
-    '/images/ambar-action2.jpg',
-    '/images/ambar-celebration.jpg'
+    '/images/WhatsApp Image 2025-07-26 at 3.43.24 PM.jpeg',
+    '/images/WhatsApp Image 2025-07-26 at 3.44.26 PM.jpeg',
+    '/images/WhatsApp Image 2025-07-28 at 9.04.48 PM.jpeg'
   ]
 
   useEffect(() => {
@@ -21,8 +21,18 @@ export default function Hero() {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with gradient overlay */}
-      <div className="absolute inset-0 hero-gradient">
-        <div className="absolute inset-0 bg-black/30"></div>
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 transition-all duration-1000">
+          <img 
+            src={heroImages[currentImage]}
+            alt="Ambar en acción"
+            className="w-full h-full hero-image"
+            style={{
+              filter: 'brightness(0.85) contrast(1.1) saturate(1.1)'
+            }}
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70"></div>
       </div>
       
       {/* Animated background elements */}
@@ -82,6 +92,21 @@ export default function Hero() {
         <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
         </div>
+      </div>
+
+      {/* Image carousel indicators */}
+      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-3">
+        {heroImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentImage(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              currentImage === index 
+                ? 'bg-pachuca-gold scale-125' 
+                : 'bg-white/50 hover:bg-white/75'
+            }`}
+          />
+        ))}
       </div>
     </section>
   )

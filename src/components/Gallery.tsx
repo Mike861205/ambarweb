@@ -14,15 +14,69 @@ export default function Gallery() {
   ]
 
   const images = [
-    { id: 1, category: 'matches', title: 'Gol decisivo', description: 'Celebrando el gol de la victoria' },
-    { id: 2, category: 'training', title: 'Entrenamiento técnico', description: 'Perfeccionando la técnica individual' },
-    { id: 3, category: 'celebrations', title: 'Campeona del mes', description: 'Recibiendo el reconocimiento mensual' },
-    { id: 4, category: 'team', title: 'Con mis compañeras', description: 'Foto oficial del equipo Sub-19' },
-    { id: 5, category: 'matches', title: 'En acción', description: 'Durante el partido vs Atlas' },
-    { id: 6, category: 'training', title: 'Preparación física', description: 'Sesión de entrenamiento físico' },
-    { id: 7, category: 'celebrations', title: 'MVP del partido', description: 'Mejor jugadora del encuentro' },
-    { id: 8, category: 'team', title: 'Capitana', description: 'Con la cinta de capitana' },
-    { id: 9, category: 'matches', title: 'Tiro libre', description: 'Ejecutando un tiro libre' }
+    { 
+      id: 1, 
+      category: 'matches', 
+      title: 'En acción durante el partido', 
+      description: 'Ambar en pleno juego demostrando su técnica',
+      src: '/images/WhatsApp Image 2025-07-26 at 3.43.24 PM.jpeg'
+    },
+    { 
+      id: 2, 
+      category: 'training', 
+      title: 'Entrenamiento técnico', 
+      description: 'Perfeccionando la técnica individual',
+      src: '/images/WhatsApp Image 2025-07-26 at 3.43.24 PM (1).jpeg'
+    },
+    { 
+      id: 3, 
+      category: 'celebrations', 
+      title: 'Momento de celebración', 
+      description: 'Festejando un logro importante',
+      src: '/images/WhatsApp Image 2025-07-26 at 3.44.26 PM.jpeg'
+    },
+    { 
+      id: 4, 
+      category: 'team', 
+      title: 'Con el equipo', 
+      description: 'Junto a sus compañeras del Pachuca',
+      src: '/images/WhatsApp Image 2025-07-26 at 3.44.26 PM (1).jpeg'
+    },
+    { 
+      id: 5, 
+      category: 'matches', 
+      title: 'Concentración total', 
+      description: 'Preparándose para el siguiente jugada',
+      src: '/images/WhatsApp Image 2025-07-26 at 3.44.27 PM (2).jpeg'
+    },
+    { 
+      id: 6, 
+      category: 'training', 
+      title: 'Sesión de entrenamiento', 
+      description: 'Trabajando en la preparación física',
+      src: '/images/WhatsApp Image 2025-07-26 at 4.03.00 PM.jpeg'
+    },
+    { 
+      id: 7, 
+      category: 'celebrations', 
+      title: 'Logro personal', 
+      description: 'Celebrando un momento especial',
+      src: '/images/WhatsApp Image 2025-07-26 at 4.03.00 PM (1).jpeg'
+    },
+    { 
+      id: 8, 
+      category: 'team', 
+      title: 'Espíritu de equipo', 
+      description: 'Mostrando la unión del grupo',
+      src: '/images/WhatsApp Image 2025-07-26 at 4.03.00 PM (2).jpeg'
+    },
+    { 
+      id: 9, 
+      category: 'matches', 
+      title: 'En el campo de juego', 
+      description: 'Dando lo mejor en cada partido',
+      src: '/images/WhatsApp Image 2025-07-28 at 9.04.48 PM.jpeg'
+    }
   ]
 
   const filteredImages = selectedCategory === 'all' 
@@ -65,12 +119,13 @@ export default function Gallery() {
               key={image.id}
               className="group relative bg-gradient-to-br from-pachuca-blue to-blue-500 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 card-hover"
             >
-              {/* Placeholder for image */}
-              <div className="aspect-square bg-gradient-to-br from-pachuca-blue to-blue-500 flex items-center justify-center">
-                <div className="text-white text-center">
-                  <div className="text-6xl mb-4">📸</div>
-                  <div className="text-sm opacity-75">Imagen próximamente</div>
-                </div>
+              {/* Image */}
+              <div className="aspect-square overflow-hidden">
+                <img 
+                  src={image.src}
+                  alt={image.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
               
               {/* Image overlay */}

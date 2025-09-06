@@ -8,7 +8,7 @@ export default function News() {
       date: '15 de Agosto, 2024',
       category: 'Partido',
       excerpt: 'Con dos goles y una asistencia, Ambar fue la figura del partido ante el equipo rival.',
-      image: '/images/news1.jpg',
+      image: '/images/WhatsApp Image 2025-07-26 at 3.43.24 PM.jpeg',
       featured: true
     },
     {
@@ -17,7 +17,7 @@ export default function News() {
       date: '8 de Agosto, 2024',
       category: 'Selección',
       excerpt: 'Primera convocatoria oficial a la selección estatal para el próximo torneo nacional.',
-      image: '/images/news2.jpg',
+      image: '/images/WhatsApp Image 2025-07-26 at 4.03.00 PM (1).jpeg',
       featured: false
     },
     {
@@ -26,7 +26,7 @@ export default function News() {
       date: '1 de Agosto, 2024',
       category: 'Reconocimiento',
       excerpt: 'Por segundo mes consecutivo, Ambar recibe este importante reconocimiento.',
-      image: '/images/news3.jpg',
+      image: '/images/WhatsApp Image 2025-07-26 at 3.44.26 PM.jpeg',
       featured: false
     },
     {
@@ -35,7 +35,7 @@ export default function News() {
       date: '20 de Julio, 2024',
       category: 'Entrevista',
       excerpt: 'En exclusiva, Ambar comparte sus metas y aspiraciones para lo que resta del año.',
-      image: '/images/news4.jpg',
+      image: '/images/WhatsApp Image 2025-07-28 at 9.04.48 PM.jpeg',
       featured: false
     }
   ]
@@ -60,8 +60,13 @@ export default function News() {
           {featuredNews && (
             <div className="lg:col-span-2">
               <article className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
-                <div className="h-64 bg-gradient-to-br from-pachuca-blue to-blue-500 flex items-center justify-center">
-                  <span className="text-white text-6xl">📰</span>
+                <div className="h-64 relative">
+                  <img 
+                    src={featuredNews.image}
+                    alt={featuredNews.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 </div>
                 <div className="p-8">
                   <div className="flex items-center mb-4">

@@ -8,7 +8,8 @@ export default function Teams() {
       role: 'Mediocampista #10',
       description: 'Equipo actual donde desarrollo mi máximo potencial',
       achievements: ['Semifinalista Liga MX Femenil Sub-19', 'Mejor Jugadora del Mes'],
-      logo: '🏆'
+      logo: '🏆',
+      image: '/images/WhatsApp Image 2025-07-26 at 4.03.00 PM (2).jpeg'
     },
     {
       name: 'Fuerzas Básicas Pachuca',
@@ -16,7 +17,8 @@ export default function Teams() {
       role: 'Jugadora en Desarrollo',
       description: 'Formación integral en las categorías menores',
       achievements: ['Campeona Regional Sub-17', 'MVP Torneo Estatal'],
-      logo: '⚽'
+      logo: '⚽',
+      image: '/images/WhatsApp Image 2025-07-26 at 4.03.00 PM (3).jpeg'
     },
     {
       name: 'Academia Local',
@@ -24,7 +26,8 @@ export default function Teams() {
       role: 'Iniciación Deportiva',
       description: 'Primeros pasos en el fútbol competitivo',
       achievements: ['Goleadora del Torneo', 'Mejor Jugadora Joven'],
-      logo: '🥅'
+      logo: '🥅',
+      image: '/images/WhatsApp Image 2025-07-26 at 4.28.18 PM.jpeg'
     }
   ]
 
@@ -46,9 +49,15 @@ export default function Teams() {
               key={team.name}
               className="bg-gradient-to-r from-white to-blue-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 card-hover"
             >
-              <div className="grid lg:grid-cols-4 gap-6 items-center">
+              <div className="grid lg:grid-cols-5 gap-6 items-center">
                 <div className="text-center lg:text-left">
-                  <div className="text-6xl mb-4">{team.logo}</div>
+                  <div className="w-20 h-20 mx-auto lg:mx-0 mb-4 rounded-full overflow-hidden border-2 border-pachuca-blue">
+                    <img 
+                      src={team.image}
+                      alt={team.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                   <h3 className="text-2xl font-bold text-neutral-dark mb-2">
                     {team.name}
                   </h3>
