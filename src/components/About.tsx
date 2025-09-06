@@ -108,7 +108,7 @@ export default function About() {
         {/* Quote */}
         <div className="mt-16 text-center">
           <blockquote className="text-2xl md:text-3xl font-medium text-neutral-dark italic">
-            "El fútbol no es solo un deporte, es una pasión que me impulsa a ser mejor cada día"
+            &ldquo;El fútbol no es solo un deporte, es una pasión que me impulsa a ser mejor cada día&rdquo;
           </blockquote>
           <cite className="block mt-4 text-pachuca-gold font-semibold">- Ambar</cite>
         </div>

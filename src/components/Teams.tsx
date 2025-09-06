@@ -4,25 +4,25 @@ export default function Teams() {
   const teams = [
     {
       name: 'Pachuca Femenil Sub-19',
-      period: '2023 - Presente',
-      role: 'Mediocampista #10',
+      period: '2025 - Presente',
+      role: 'Mediocampista #56',
       description: 'Equipo actual donde desarrollo mi máximo potencial',
-      achievements: ['Semifinalista Liga MX Femenil Sub-19', 'Mejor Jugadora del Mes'],
+      achievements: ['Liga MX Femenil Sub-19', 'Ya debuto en la Jornada 3 vs Queretaro'],
       logo: '🏆',
       image: '/images/WhatsApp Image 2025-07-26 at 4.03.00 PM (2).jpeg'
     },
     {
-      name: 'Fuerzas Básicas Pachuca',
-      period: '2021 - 2023',
+      name: 'Fuerzas Básicas Pachuca sub15',
+      period: '2024 - 2025',
       role: 'Jugadora en Desarrollo',
       description: 'Formación integral en las categorías menores',
-      achievements: ['Campeona Regional Sub-17', 'MVP Torneo Estatal'],
+      achievements: ['Campeona Regional Sub-15', 'Toluca, FMF, Torneo Sub15 con gol en la final'],
       logo: '⚽',
       image: '/images/WhatsApp Image 2025-07-26 at 4.03.00 PM (3).jpeg'
     },
     {
-      name: 'Academia Local',
-      period: '2019 - 2021',
+      name: 'La Joya FC',
+      period: '2018 - 2024',
       role: 'Iniciación Deportiva',
       description: 'Primeros pasos en el fútbol competitivo',
       achievements: ['Goleadora del Torneo', 'Mejor Jugadora Joven'],
@@ -52,6 +52,7 @@ export default function Teams() {
               <div className="grid lg:grid-cols-5 gap-6 items-center">
                 <div className="text-center lg:text-left">
                   <div className="w-20 h-20 mx-auto lg:mx-0 mb-4 rounded-full overflow-hidden border-2 border-pachuca-blue">
+                    
                     <img 
                       src={team.image}
                       alt={team.name}
@@ -72,9 +73,9 @@ export default function Teams() {
                     {team.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {team.achievements.map((achievement, achievementIndex) => (
+                    {team.achievements.map((achievement) => (
                       <span
-                        key={achievementIndex}
+                        key={achievement}
                         className="bg-pachuca-blue text-white px-3 py-1 rounded-full text-sm font-medium"
                       >
                         {achievement}
