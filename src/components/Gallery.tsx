@@ -54,7 +54,7 @@ export default function Gallery() {
       category: 'training', 
       title: 'Sesión de entrenamiento', 
       description: 'Trabajando en la preparación física',
-      src: '/images/WhatsApp Image 2025-07-26 at 4.03.00 PM.jpeg'
+      src: '/images/ambar1.jpeg'
     },
     { 
       id: 7, 

@@ -74,11 +74,11 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="text-gray-300">
                 <span className="block font-medium">Representante</span>
-                <span className="text-sm">+52 55 1234 5678</span>
+                <span className="text-sm">+52 624 137 0820</span>
               </div>
               <div className="text-gray-300">
                 <span className="block font-medium">Email</span>
-                <span className="text-sm">ambar@representante.com</span>
+                <span className="text-sm">miguel.palomera1986@gmail.com</span>
               </div>
               <div className="text-gray-300">
                 <span className="block font-medium">Club</span>
@@ -95,7 +95,7 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2024 Ambar Pachuca. Todos los derechos reservados.
+              © 2024 Ambar Palomera Club Pachuca. Todos los derechos reservados.
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-gray-400 hover:text-pachuca-gold transition-colors duration-200">

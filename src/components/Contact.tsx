@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
+import { emailConfig } from '../config/email'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -10,6 +12,10 @@ export default function Contact() {
     message: ''
   })
 
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null)
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -17,10 +23,105 @@ export default function Contact() {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+    
+    try {
+      // Método Principal: EmailJS (completamente configurado)
+      emailjs.init(emailConfig.publicKey)
+      
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: emailConfig.destinationEmail,
+        reply_to: formData.email
+      }
+
+      const response = await emailjs.send(
+        emailConfig.serviceID,
+        emailConfig.templateID,
+        templateParams,
+        emailConfig.publicKey
+      )
+      
+      console.log('✅ EmailJS: Email enviado exitosamente:', response)
+      setSubmitStatus('success')
+      setIsModalOpen(true)
+      
+      // Limpiar el formulario después del envío exitoso
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      })
+      
+    } catch (error) {
+      console.error('❌ Error con EmailJS:', error)
+      
+      // Método de Respaldo 1: FormSubmit
+      try {
+        const formData2 = new FormData()
+        formData2.append('name', formData.name)
+        formData2.append('email', formData.email)
+        formData2.append('subject', formData.subject)
+        formData2.append('message', formData.message)
+        formData2.append('_to', 'miguel.palomera1986@gmail.com')
+        formData2.append('_subject', `${formData.subject} - Contacto Web Ambar`)
+        formData2.append('_next', 'https://ambarweb.vercel.app/')
+        
+        const response = await fetch('https://formsubmit.co/miguel.palomera1986@gmail.com', {
+          method: 'POST',
+          body: formData2
+        })
+        
+        if (response.ok) {
+          console.log('✅ FormSubmit: Email enviado como respaldo')
+          setSubmitStatus('success')
+          setIsModalOpen(true)
+          
+          setFormData({
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+          })
+        } else {
+          throw new Error('FormSubmit falló')
+        }
+        
+      } catch (fallbackError) {
+        console.error('❌ Error con FormSubmit:', fallbackError)
+        
+        // Método de Respaldo Final: Mailto
+        const mailtoParams = new URLSearchParams({
+          subject: formData.subject,
+          body: `Nombre: ${formData.name}\nCorreo: ${formData.email}\n\nMensaje:\n${formData.message}`
+        })
+        const mailtoLink = `mailto:${emailConfig.destinationEmail}?${mailtoParams}`
+        window.open(mailtoLink, '_blank')
+        
+        setSubmitStatus('success')
+        setIsModalOpen(true)
+        
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        })
+      }
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false)
   }
 
   return (
@@ -50,7 +151,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-neutral-dark">Email</h4>
-                    <p className="text-gray-600">ambar@pachucarepresentante.com</p>
+                    <p className="text-gray-600">miguel.palomera1986@gmail.com</p>
                   </div>
                 </div>
 
@@ -60,7 +161,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-neutral-dark">Representante</h4>
-                    <p className="text-gray-600">+52 55 1234 5678</p>
+                    <p className="text-gray-600">+52 624 137 0820  </p>
                   </div>
                 </div>
 
@@ -179,13 +280,76 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full bg-pachuca-gold hover:bg-yellow-500 text-white font-bold py-4 px-6 rounded-lg transition-colors duration-200"
+                disabled={isSubmitting}
+                className="w-full bg-pachuca-gold hover:bg-yellow-500 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-bold py-4 px-6 rounded-lg transition-colors duration-200"
               >
-                Enviar Mensaje
+                {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
               </button>
             </form>
           </div>
         </div>
+
+        {/* Modal de Resultado */}
+        {isModalOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-2xl p-8 max-w-md w-full mx-4 relative">
+              <div className="text-center">
+                {submitStatus === 'success' ? (
+                  <>
+                    {/* Icono de éxito */}
+                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-3xl">✅</span>
+                    </div>
+                    
+                    <h3 className="text-2xl font-bold text-neutral-dark mb-4">
+                      ¡Mensaje Enviado!
+                    </h3>
+                    
+                    <p className="text-gray-600 mb-6">
+                      Tu mensaje ha sido enviado exitosamente y llegará directamente a miguel.palomera1986@gmail.com. Te responderemos pronto.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    {/* Icono de error */}
+                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-3xl">❌</span>
+                    </div>
+                    
+                    <h3 className="text-2xl font-bold text-neutral-dark mb-4">
+                      Error al Enviar
+                    </h3>
+                    
+                    <p className="text-gray-600 mb-6">
+                      Hubo un problema al enviar tu mensaje. Por favor, intenta nuevamente o contacta directamente a miguel.palomera1986@gmail.com.
+                    </p>
+                  </>
+                )}
+                
+                <div className="bg-blue-50 p-4 rounded-lg mb-6">
+                  <p className="text-sm text-blue-800">
+                    <strong>Contacto directo:</strong> 
+                    <br />
+                    <a href="mailto:miguel.palomera1986@gmail.com" className="text-pachuca-blue font-medium">
+                      miguel.palomera1986@gmail.com
+                    </a>
+                  </p>
+                </div>
+                
+                <button
+                  onClick={closeModal}
+                  className={`w-full font-bold py-3 px-6 rounded-lg transition-colors duration-200 ${
+                    submitStatus === 'success' 
+                      ? 'bg-pachuca-blue hover:bg-blue-600 text-white' 
+                      : 'bg-red-500 hover:bg-red-600 text-white'
+                  }`}
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )
