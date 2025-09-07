@@ -9,7 +9,7 @@ export default function Teams() {
       description: 'Equipo actual donde desarrollo mi máximo potencial',
       achievements: ['Liga MX Femenil Sub-19', 'Ya debuto en la Jornada 3 vs Queretaro'],
       logo: '🏆',
-      image: '/images/WhatsApp Image 2025-07-26 at 4.03.00 PM (2).jpeg'
+      image: '/images/ambar1.jpeg'
     },
     {
       name: 'Fuerzas Básicas Pachuca sub15',
@@ -51,12 +51,11 @@ export default function Teams() {
             >
               <div className="grid lg:grid-cols-5 gap-6 items-center">
                 <div className="text-center lg:text-left">
-                  <div className="w-20 h-20 mx-auto lg:mx-0 mb-4 rounded-full overflow-hidden border-2 border-pachuca-blue">
-                    
+                  <div className="w-24 h-24 mx-auto lg:mx-0 mb-4 rounded-full overflow-hidden border-3 border-pachuca-blue shadow-lg">
                     <img 
                       src={team.image}
                       alt={team.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-center hover:scale-110 transition-transform duration-300"
                     />
                   </div>
                   <h3 className="text-2xl font-bold text-neutral-dark mb-2">
@@ -104,16 +103,16 @@ export default function Teams() {
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-pachuca-gold mb-2">2</div>
+                <div className="text-3xl font-bold text-pachuca-gold mb-2">1</div>
                 <div className="text-blue-100">Años en el club</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-pachuca-gold mb-2">28</div>
-                <div className="text-blue-100">Partidos jugados</div>
+                <div className="text-3xl font-bold text-pachuca-gold mb-2">3</div>
+                <div className="text-blue-100">Jornadas jugadas</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-pachuca-gold mb-2">15</div>
-                <div className="text-blue-100">Goles anotados</div>
+                <div className="text-3xl font-bold text-pachuca-gold mb-2">56</div>
+                <div className="text-blue-100">Número de camiseta</div>
               </div>
             </div>
           </div>

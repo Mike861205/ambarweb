@@ -20,10 +20,10 @@ export default function About() {
               <div className="flex-shrink-0 w-4 h-4 bg-pachuca-blue rounded-full mt-2"></div>
               <div>
                 <h3 className="text-xl font-semibold text-neutral-dark mb-2">
-                  Inicios en el Fútbol (2020)
+                  Inicios en el Fútbol (2017)
                 </h3>
                 <p className="text-gray-600">
-                  Comencé mi pasión por el fútbol a temprana edad, entrenando en las categorías menores 
+                  Comencé mi pasión por el fútbol a temprana edad, entrenando en las categorías menores mixtas con el Club La Joya 
                   y desarrollando mis habilidades fundamentales en el campo.
                 </p>
               </div>
@@ -33,11 +33,11 @@ export default function About() {
               <div className="flex-shrink-0 w-4 h-4 bg-pachuca-gold rounded-full mt-2"></div>
               <div>
                 <h3 className="text-xl font-semibold text-neutral-dark mb-2">
-                  Desarrollo en Fuerzas Básicas (2021-2022)
+                  Desarrollo en Fuerzas Básicas (2024)
                 </h3>
                 <p className="text-gray-600">
-                  Ingresé a las fuerzas básicas donde perfeccioné mi técnica, velocidad y visión de juego. 
-                  Aquí aprendí los valores del trabajo en equipo y la disciplina.
+                  Ingresé a las fuerzas básicas en 2024 donde perfeccioné mi técnica, velocidad y visión de juego. 
+                  Aquí aprendí los valores de un Cluc Profesional que se caracterisa del trabajo en equipo y la disciplina.
                 </p>
               </div>
             </div>
@@ -46,10 +46,10 @@ export default function About() {
               <div className="flex-shrink-0 w-4 h-4 bg-sport-green rounded-full mt-2"></div>
               <div>
                 <h3 className="text-xl font-semibold text-neutral-dark mb-2">
-                  Pachuca Femenil Sub-19 (2023-Presente)
+                  Pachuca Femenil Sub-19 (2025-Presente)
                 </h3>
                 <p className="text-gray-600">
-                  Me uní al prestigioso club Pachuca Femenil Sub-19, donde continúo desarrollando 
+                  En mi primer año jugue en las FB sub-15 donde quedamos campeonas y actualmente he subido a la categoria Pachuca Femenil Sub-19, donde continúo desarrollando 
                   mi potencial y contribuyendo al éxito del equipo con dedicación y pasión.
                 </p>
               </div>
@@ -73,7 +73,7 @@ export default function About() {
             <div className="space-y-4">
               <div className="flex justify-between">
                 <span className="font-medium">Edad:</span>
-                <span>17 años</span>
+                <span>14 años</span>
               </div>
               <div className="flex justify-between">
                 <span className="font-medium">Posición:</span>
@@ -81,7 +81,7 @@ export default function About() {
               </div>
               <div className="flex justify-between">
                 <span className="font-medium">Número:</span>
-                <span>#10</span>
+                <span>#56</span>
               </div>
               <div className="flex justify-between">
                 <span className="font-medium">Pie Dominante:</span>
@@ -99,7 +99,12 @@ export default function About() {
                 <span className="bg-white/20 px-3 py-1 rounded-full text-sm">Visión de Juego</span>
                 <span className="bg-white/20 px-3 py-1 rounded-full text-sm">Pases Precisos</span>
                 <span className="bg-white/20 px-3 py-1 rounded-full text-sm">Velocidad</span>
-                <span className="bg-white/20 px-3 py-1 rounded-full text-sm">Liderazgo</span>
+                <span className="bg-white/20 px-3 py-1 rounded-full text-sm">Gambeteo</span>
+                <span className="bg-white/20 px-3 py-1 rounded-full text-sm">Drible</span>
+                <span className="bg-white/20 px-3 py-1 rounded-full text-sm">Ambición</span>
+                <span className="bg-white/20 px-3 py-1 rounded-full text-sm">Equipo</span>
+                <span className="bg-white/20 px-3 py-1 rounded-full text-sm">Entusiasmo</span>
+                <span className="bg-white/20 px-3 py-1 rounded-full text-sm">Disciplinada</span>
               </div>
             </div>
           </div>
