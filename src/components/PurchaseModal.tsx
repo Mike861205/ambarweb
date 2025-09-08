@@ -3,8 +3,10 @@
 import { useState } from 'react'
 import { loadStripe } from '@stripe/stripe-js'
 
-// Inicializar Stripe
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
+// Inicializar Stripe solo si la clave está disponible
+const stripePromise = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY 
+  ? loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
+  : null
 
 interface Product {
   id: number
@@ -135,6 +137,12 @@ ${formData.comments ? `📝 *Comentarios:* ${formData.comments}` : ''}
 
   const handleCardPayment = async () => {
     try {
+      // Verificar que Stripe esté disponible
+      if (!stripePromise) {
+        alert('El sistema de pagos no está disponible. Por favor, usa el método de transferencia bancaria.')
+        return
+      }
+
       // Preparar datos de la orden
       const orderData = {
         productName: product.name,

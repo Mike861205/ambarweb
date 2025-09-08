@@ -1,8 +1,57 @@
-# WebAmbar - Página Oficial de Ambar Pachuca
+# Ambar Web - Página Oficial de Ambar Pachuca Femenil Sub-19
 
-## 🏆 Descripción
+🏆 Página web oficial con tienda e-commerce integrada para Ambar, jugadora del equipo Pachuca Femenil Sub-19.
 
-Página web oficial de **Ambar**, jugadora del **Pachuca Femenil Sub-19**. Una moderna y deportiva plataforma digital que presenta la carrera, estadísticas, historia y logros de esta prometedora futbolista mexicana.
+## 🚀 Características Principales
+
+- ✨ **Página web moderna** con diseño responsivo
+- 🛍️ **Tienda e-commerce** completa con 6 productos oficiales
+- 💳 **Pagos con Stripe** (tarjetas de crédito/débito)
+- 📱 **WhatsApp Business** para transferencias bancarias
+- 📧 **EmailJS** para confirmaciones automáticas
+- 🎨 **UI/UX profesional** con Tailwind CSS
+
+## 🛠️ Tecnologías Utilizadas
+
+- **Next.js 14** - Framework React con App Router
+- **TypeScript** - Tipado estático para mejor desarrollo
+- **Tailwind CSS** - Framework de estilos utilitarios
+- **Stripe** - Procesamiento seguro de pagos
+- **EmailJS** - Sistema de emails sin backend
+- **Vercel** - Plataforma de despliegue
+
+## 🌐 IMPORTANTE: Configuración para Vercel
+
+### ⚠️ Variables de Entorno Requeridas
+
+**Para evitar errores de compilación en Vercel**, debes configurar estas variables en tu dashboard:
+
+1. Ve a **Settings > Environment Variables** en tu proyecto de Vercel
+2. Agrega las siguientes variables:
+
+```bash
+# Stripe Configuration (OBLIGATORIAS)
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_tu_clave_aqui
+STRIPE_SECRET_KEY=sk_test_tu_clave_aqui  
+STRIPE_PRODUCT_ID=prod_tu_producto_aqui
+
+# EmailJS Configuration
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=service_tu_servicio
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=template_tu_template
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=tu_clave_publica
+```
+
+### 🔧 Cómo obtener las claves:
+
+**Stripe:**
+1. Registro en [stripe.com](https://stripe.com)
+2. Ve a **Developers > API Keys**
+3. Copia las claves de test o live
+
+**EmailJS:**
+1. Registro en [emailjs.com](https://emailjs.com)
+2. Crea un servicio y template
+3. Ve a **Account > Keys** para obtener claves
 
 ## ⚽ Características
 

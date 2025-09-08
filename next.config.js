@@ -10,6 +10,14 @@ const nextConfig = {
     ],
     unoptimized: true,
   },
+  // Mejorar el manejo de variables de entorno
+  env: {
+    CUSTOM_KEY: process.env.CUSTOM_KEY,
+  },
+  // Configuración específica para Vercel
+  experimental: {
+    serverComponentsExternalPackages: ['stripe'],
+  },
 }
 
 module.exports = nextConfig
