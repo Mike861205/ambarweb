@@ -12,9 +12,9 @@ export default function Stats() {
 
   const achievements = [
     "Mejor Jugadora del Mes - Marzo 2024",
-    "Top 3 Goleadoras Sub-19 - 2024",
-    "Capitana del Equipo - 2024",
-    "MVP Torneo Regional - 2023",
+    "Top 3 Goleadoras a nivel estatal en Los cabos - 2023",
+    "Capitana del Equipo en la Seleccion de Los Cabos - 2023",
+    "Campeona Nacional en Leon en Enero - 2024 con el Club La Joya",
   ];
 
   return (

@@ -4,35 +4,35 @@ export default function News() {
   const news = [
     {
       id: 1,
-      title: 'Ambar lidera la victoria de Pachuca Sub-19',
-      date: '15 de Agosto, 2024',
+      title: 'Ambar ya debuto en el equipo de Pachuca Sub-19',
+      date: '03 de Agosto, 2024',
       category: 'Partido',
-      excerpt: 'Con dos goles y una asistencia, Ambar fue la figura del partido ante el equipo rival.',
+      excerpt: 'Con buen debut en sus primeros 2 partidos de la sub19.',
       image: '/images/WhatsApp Image 2025-07-26 at 3.43.24 PM.jpeg',
       featured: true
     },
     {
       id: 2,
-      title: 'Convocada a la Selección Estatal Sub-19',
+      title: 'Convocada a la Selección Nacional Mexicana Sub-15',
       date: '8 de Agosto, 2024',
       category: 'Selección',
-      excerpt: 'Primera convocatoria oficial a la selección estatal para el próximo torneo nacional.',
+      excerpt: 'Primera convocatoria oficial a la selección nacional para el torneo de la Super Copa.',
       image: '/images/WhatsApp Image 2025-07-26 at 4.03.00 PM (1).jpeg',
       featured: false
     },
     {
       id: 3,
-      title: 'Mejor Jugadora del Mes de Julio',
-      date: '1 de Agosto, 2024',
+      title: 'Jugadora con gran personalidad dentro del campo',
+      date: '1 de Agosto, 2024-presente',
       category: 'Reconocimiento',
-      excerpt: 'Por segundo mes consecutivo, Ambar recibe este importante reconocimiento.',
+      excerpt: 'Dedicacion, cosntancia y disciplina para lograr los objetivos.',
       image: '/images/WhatsApp Image 2025-07-26 at 3.44.26 PM.jpeg',
       featured: false
     },
     {
       id: 4,
       title: 'Entrevista: Mis objetivos para la temporada',
-      date: '20 de Julio, 2024',
+      date: '20 de Junio, 2025',
       category: 'Entrevista',
       excerpt: 'En exclusiva, Ambar comparte sus metas y aspiraciones para lo que resta del año.',
       image: '/images/WhatsApp Image 2025-07-28 at 9.04.48 PM.jpeg',
