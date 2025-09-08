@@ -1,17 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 
-// Validar que las variables de entorno estén configuradas
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error('STRIPE_SECRET_KEY is not configured')
-}
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: '2025-08-27.basil',
-})
-
 export async function POST(request: NextRequest) {
   try {
+    // Validar que las variables de entorno estén configuradas en runtime
+    if (!process.env.STRIPE_SECRET_KEY) {
+      console.error('STRIPE_SECRET_KEY is not configured')
+      return NextResponse.json(
+        { error: 'Configuración de webhooks no disponible' },
+        { status: 500 }
+      )
+    }
+
+    // Inicializar Stripe solo cuando se necesite
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+      apiVersion: '2025-08-27.basil',
+    })
+
     const body = await request.text()
     const sig = request.headers.get('stripe-signature')
 
