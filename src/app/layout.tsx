@@ -9,11 +9,38 @@ export const metadata: Metadata = {
   description: 'Página oficial de Ambar, jugadora del Pachuca Femenil Sub-19. Conoce su historia, estadísticas, equipos y noticias.',
   keywords: 'Ambar, Pachuca, Futbol, Femenil, Sub-19, Jugadora, Mexico',
   authors: [{ name: 'Team WebAmbar' }],
+  icons: {
+    icon: [
+      {
+        url: '/images/ambarlogo.svg',
+        type: 'image/svg+xml',
+      },
+      {
+        url: '/favicon.ico',
+        sizes: '32x32',
+      },
+    ],
+    apple: [
+      {
+        url: '/images/ambarlogo.svg',
+        sizes: '180x180',
+        type: 'image/svg+xml',
+      },
+    ],
+  },
   openGraph: {
     title: 'Ambar Pachuca - Futbolista Profesional',
     description: 'Página oficial de Ambar, jugadora del Pachuca Femenil Sub-19',
     type: 'website',
     locale: 'es_MX',
+    images: [
+      {
+        url: '/images/ambarlogo.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Ambar Pachuca Logo',
+      },
+    ],
   },
 }
 

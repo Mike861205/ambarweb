@@ -13,6 +13,7 @@ export default function Navigation() {
     { href: '#equipos', label: 'Equipos' },
     { href: '#noticias', label: 'Noticias' },
     { href: '#galeria', label: 'Galería' },
+    { href: '#tienda', label: 'Tienda', special: true },
     { href: '#contacto', label: 'Contacto' },
   ]
 
@@ -22,12 +23,25 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <span className="text-2xl font-bold text-pachuca-blue">
-              AMBAR
-            </span>
-            <span className="ml-2 text-pachuca-gold text-sm font-semibold">
-              PACHUCA
-            </span>
+            <div className="flex items-center space-x-2 md:space-x-3">
+              {/* Logo SVG */}
+              <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
+                <img 
+                  src="/images/ambarlogo.svg" 
+                  alt="Ambar Logo" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              {/* Texto del logo */}
+              <div className="flex items-center">
+                <span className="text-xl md:text-2xl font-bold text-pachuca-blue">
+                  AMBAR
+                </span>
+                <span className="ml-1 md:ml-2 text-pachuca-gold text-xs md:text-sm font-semibold">
+                  PACHUCA
+                </span>
+              </div>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
@@ -37,7 +51,11 @@ export default function Navigation() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-pachuca-blue px-3 py-2 text-sm font-medium transition-colors duration-200 hover:bg-blue-50 rounded-md"
+                  className={`${
+                    item.special 
+                      ? 'bg-gradient-to-r from-pachuca-gold to-yellow-500 text-white hover:from-yellow-500 hover:to-pachuca-gold shadow-lg' 
+                      : 'text-gray-700 hover:text-pachuca-blue hover:bg-blue-50'
+                  } px-3 py-2 text-sm font-medium transition-all duration-200 rounded-md`}
                 >
                   {item.label}
                 </Link>
@@ -96,7 +114,11 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-gray-700 hover:text-pachuca-blue block px-3 py-2 text-base font-medium hover:bg-blue-50 rounded-md"
+                className={`${
+                  item.special 
+                    ? 'bg-gradient-to-r from-pachuca-gold to-yellow-500 text-white' 
+                    : 'text-gray-700 hover:text-pachuca-blue hover:bg-blue-50'
+                } block px-3 py-2 text-base font-medium rounded-md`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
