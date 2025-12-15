@@ -166,7 +166,7 @@ export default function About() {
         <div className="mt-20 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-pachuca-blue/5 via-pachuca-gold/5 to-pachuca-blue/5 rounded-3xl"></div>
           <div className="relative text-center py-12 px-8">
-            <div className="text-6xl text-pachuca-gold/30 mb-4">"</div>
+            <div className="text-6xl text-pachuca-gold/30 mb-4">&ldquo;</div>
             <blockquote className="text-2xl md:text-4xl font-medium text-neutral-dark italic max-w-4xl mx-auto leading-relaxed">
               El fútbol no es solo un deporte, es una pasión que me impulsa a ser mejor cada día
             </blockquote>
